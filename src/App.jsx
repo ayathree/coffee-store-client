@@ -14,7 +14,7 @@ function App() {
     <>
      
      <div className='m-20'>
-     <h1 className='text-6xl text-purple-600 text-center mb-8'>Hot Cold Coffees:{coffees.length}</h1>
+     <h1 className='text-6xl text-purple-600 text-center mb-8'>Hot Coffees:{coffees.length}</h1>
       {/* read */}
      <div className='grid grid-cols-2 gap-5'>
      {
