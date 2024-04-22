@@ -10,6 +10,8 @@ import AddCoffee from './component/AddCoffee.jsx';
 import UpdateCoffee from './component/UpdateCoffee.jsx';
 import Sign from './component/Sign.jsx';
 import LogIn from './component/LogIn.jsx';
+import AuthProvider from './provider/AuthProvider.jsx';
+import CoffeeUser from './component/CoffeeUser.jsx';
 
 const router = createBrowserRouter([
   {
@@ -33,13 +35,21 @@ const router = createBrowserRouter([
     element:<Sign></Sign>
   },
   {
-    path:'/logIn',
+    path:'/logged',
     element:<LogIn></LogIn>
+  },
+  {
+    path:'/coffeeUsers',
+    element:<CoffeeUser></CoffeeUser>,
+    // read user
+    loader: ()=>fetch('http://localhost:5000/userCoffee')
   }
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
+    <AuthProvider>
     <RouterProvider router={router} />
+    </AuthProvider>
   </React.StrictMode>,
 )
