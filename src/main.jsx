@@ -8,6 +8,8 @@ import {
 import './index.css'
 import AddCoffee from './component/AddCoffee.jsx';
 import UpdateCoffee from './component/UpdateCoffee.jsx';
+import Sign from './component/Sign.jsx';
+import LogIn from './component/LogIn.jsx';
 
 const router = createBrowserRouter([
   {
@@ -25,6 +27,14 @@ const router = createBrowserRouter([
     element:<UpdateCoffee></UpdateCoffee>,
     // update
     loader:({params})=>fetch(`http://localhost:5000/coffee/${params.id}`)
+  },
+  {
+    path:'/signUp',
+    element:<Sign></Sign>
+  },
+  {
+    path:'/logIn',
+    element:<LogIn></LogIn>
   }
 ]);
 
