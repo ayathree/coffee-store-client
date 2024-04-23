@@ -19,7 +19,7 @@ const Sign = () => {
 
             // new user
             const userCoffee = {email, createdAt: createdAt};
-            fetch('http://localhost:5000/userCoffee',{
+            fetch('https://coffee-store-server-three-sand.vercel.app/userCoffee',{
             method:'POST',
             headers:{
                 'content-type':'application/json'
